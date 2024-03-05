@@ -15,6 +15,7 @@
     "start:dev": "yarn watch:css & ionic capacitor run ios -l --external"
   },
   "dependencies": {
+    "16": "^0.0.2",
     "@capacitor/android": "5.5.0",
     "@capacitor/app": "5.0.6",
     "@capacitor/camera": "^5.0.7",
