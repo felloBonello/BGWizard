@@ -13,15 +13,19 @@ const TrackGame: React.FC = () => {
             data-testid="player-name"
             label="Player name" 
             placeholder="Enter player name" 
-            onIonChange={(e) => setPlayerName(e.detail.value ?? '')} 
+            onIonChange={(e) =>
+              setPlayerName(e.detail.value ?? '')}
             value={playerName}>
         </IonInput>
-        <IonButton onClick={() => {
+        <IonButton
+          data-testid="submit-button"
+          onClick={() => {
             setPlayerList([...playerList, playerName])
             setPlayerName('');
             
         }}>submit</IonButton>
-        <IonList>
+        <IonList
+          data-testid="player-list">
             {playerList.map((player, index) => {
                 return (
                     <IonItem key={index}>
