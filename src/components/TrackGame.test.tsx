@@ -2,6 +2,7 @@ import React from 'react';
 import {render, screen, fireEvent, waitFor, within} from '@testing-library/react';
 import TrackGame from "./TrackGame";
 import {IonApp} from "@ionic/react";
+import {getIonChangeEvent} from "../helpers/test/events";
 
 describe('Track Game', () => {
   it('renders', () => {
@@ -15,7 +16,7 @@ describe('Track Game', () => {
     const playerName = 'John Doe'
 
     const input = screen.getByTestId('player-name')
-    fireEvent(input, new CustomEvent('ionChange', { detail: { value: playerName } }));
+    fireEvent(input, getIonChangeEvent(playerName));
 
     expect(input).toHaveValue(playerName)
 
